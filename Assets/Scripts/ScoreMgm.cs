@@ -10,7 +10,6 @@ public class ScoreMgm : MonoBehaviour
 
     void Start()
     {
-        // IncreaseScore();
         scoreText = this.GetComponent<Text>();
     }
 
@@ -18,10 +17,4 @@ public class ScoreMgm : MonoBehaviour
     {
         if (Time.time >= 3) scoreText.text = "SCORE: " + scoreCounter.ToString();
     }
-
-    //public void IncreaseScore()
-    //{
-    //    scoreCounter += 1;
-    //    scoreText.text = "SCORE: " + scoreCounter;
-    //}
 }

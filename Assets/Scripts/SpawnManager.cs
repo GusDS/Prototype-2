@@ -14,26 +14,19 @@ public class SpawnManager : MonoBehaviour
     private int animalIndex;
 
     void Start() {
+        // Initial delay 3 seconds count. MinInterval changed when added random interval range
         InvokeRepeating("SpawnRandomInterval", startDelay, spawnMinInterval);
     }
 
-/*    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            SpawnRandomAnimal();
-        }
-    }
-*/
     void SpawnRandomInterval()
     {
+        // Min 0.5 seconds since last spawn / Max 3 seconds between animals
         randomInterval = Random.Range(0f, spawnMaxInterval - spawnMinInterval);
         Invoke("SpawnRandomAnimal", randomInterval);
     }
 
     void SpawnRandomAnimal()
     {
-        // spawnInterval es ahora el mínimo
         animalIndex = Random.Range(0, animalPrefabs.Length);
         Vector3 spanwPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
         Instantiate(animalPrefabs[animalIndex], spanwPos, animalPrefabs[animalIndex].transform.rotation);

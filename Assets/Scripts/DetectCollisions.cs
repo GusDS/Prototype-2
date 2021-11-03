@@ -5,14 +5,11 @@ using UnityEngine.UI;
 
 public class DetectCollisions : MonoBehaviour
 {
-    //public Text scoreText;
-    //private int scoreCounter = -1;
     private ScoreMgm scoreMgmScript;
 
     void Start()
     {
         scoreMgmScript = GameObject.Find("ScoreText").GetComponent<ScoreMgm>();
-//        IncreaseScore();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,11 +18,4 @@ public class DetectCollisions : MonoBehaviour
         Destroy(other.gameObject);
         Destroy(gameObject);
     }
-
-/*    public void IncreaseScore()
-    {
-        scoreCounter += 1;
-        scoreText.text = "SCORE: " + scoreCounter;
-    }
-*/
 }

@@ -11,17 +11,10 @@ public class SledController : MonoBehaviour
     public float zRangeMax = 4f; // 16f;
     private float horizontalInput;
     private float verticalInput;
-/*    public GameObject projectilePrefab;
-    private Vector3 projectileOffset = new Vector3(0.9f, 1.9f, 0.7f);
-*/
-    void Start()
-    {
-
-    }
 
     void Update()
     {
-        // Player Movement
+        // Player Movement (Sled Control now)
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
@@ -37,11 +30,5 @@ public class SledController : MonoBehaviour
             if (transform.position.z < zRangeMin) transform.position = new Vector3(transform.position.x, transform.position.y, zRangeMin);
             if (transform.position.z > zRangeMax) transform.position = new Vector3(transform.position.x, transform.position.y, zRangeMax);
         }
-
-/*        // Launch projectile from player
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Joystick1Button0)) // Input.GetButtonDown -- se puede remapear
-        {
-            Instantiate(projectilePrefab, transform.position + projectileOffset, projectilePrefab.transform.rotation);
-        }*/
     }
 }

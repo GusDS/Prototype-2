@@ -10,10 +10,6 @@ public class PanelMgm : MonoBehaviour
         Invoke("EnablePanel", 3);
     }
 
-    void Update()
-    {
-    }
-
     void EnablePanel ()
     {
         this.GetComponent<Image>().enabled = true;

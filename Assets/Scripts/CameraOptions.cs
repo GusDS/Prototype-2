@@ -8,6 +8,7 @@ public class CameraOptions : MonoBehaviour
     private Vector3 cameraOffset;
     private bool follow;
 
+    // Increased height of cameraTop when bigger "Sled player" added
     private Vector3 cameraTop = new Vector3(0, 35, 7.5f); // (0, 25, 7.5f);
     private Vector3 cameraTopRotation = new Vector3(90, 0, 0);
 
